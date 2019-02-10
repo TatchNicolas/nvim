@@ -1,0 +1,15 @@
+# Plugins loaded lazily
+
+# Python
+[[plugins]]
+on_ft = 'python'
+repo = 'davidhalter/jedi-vim'
+[[plugins]]
+repo = 'nvie/vim-flake8'
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+
+# Go
+# [[plugins]]
+# on_ft = 'golang'
+# repo = 'fatih/vim-go'
