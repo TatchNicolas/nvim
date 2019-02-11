@@ -1,5 +1,5 @@
 " Basic configurations
-colo elflord
+colo desert
 set autoindent
 set clipboard+=unnamedplus
 set expandtab
@@ -41,6 +41,9 @@ imap jj <Esc>
 tnoremap <Esc> <C-\><C-n>
 tnoremap <silent> jj <C-\><C-n>
 
+" Some tweak before loading plugins
+autocmd BufRead,BufNewFile *.vue setlocal filetype=vue
+
 "dein Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
@@ -58,8 +61,7 @@ if dein#load_state('/home/tatch/.cache/dein')
   call dein#add('/home/tatch/.cache/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here like this:
-  "call dein#add('Shougo/neosnippet.vim')
-  "call dein#add('Shougo/neosnippet-snippets')
+  call dein#add('Shougo/deoplete.nvim')
 
   " Load plugins specified in TOML files
   call dein#load_toml('~/.config/nvim/dein.toml', {'lazy': 0})
@@ -75,8 +77,8 @@ filetype plugin indent on
 syntax enable
 
 " If you want to install not installed plugins on startup.
-"if dein#check_install()
-"  call dein#install()
-"endif
+if dein#check_install()
+ call dein#install()
+endif
 
 "End dein Scripts-------------------------

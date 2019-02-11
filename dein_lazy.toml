@@ -3,13 +3,41 @@
 # Python
 [[plugins]]
 on_ft = 'python'
-repo = 'davidhalter/jedi-vim'
+repo = 'zchee/deoplete-jedi'
 [[plugins]]
+on_ft = 'python'
 repo = 'nvie/vim-flake8'
 [[plugins]]
+on_ft = 'python'
 repo = 'Yggdroot/indentLine'
 
 # Go
+[[plugins]]
+on_ft = 'go'
+repo = 'fatih/vim-go'
+hook_add = '''
+  let g:go_highlight_functions = 1
+  let g:go_highlight_methods = 1
+  let g:go_highlight_structs = 1
+'''
+[[plugins]]
+on_ft = ['go']
+repo = 'zchee/deoplete-go'
+
+# Frontend
+[[plugins]]
+on_ft = ['html', 'vue']
+repo = 'mattn/emmet-vim'
+[[plugins]]
+on_ft = ['vue']
+repo = 'posva/vim-vue'
+
+# JS
 # [[plugins]]
-# on_ft = 'golang'
+# on_ft = 'vue'
 # repo = 'fatih/vim-go'
+# hook_add = '''
+# '''
+# [[plugins]]
+# on_ft = ['vue']
+# repo = 'zchee/deoplete-go'

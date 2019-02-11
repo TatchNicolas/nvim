@@ -3,15 +3,22 @@
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 hook_add = '''
+  nnoremap <silent> <C-k><C-b> :<C-u>Denite buffer<CR>
   nnoremap <silent> <C-k><C-f> :<C-u>Denite file_rec<CR>
   nnoremap <silent> <C-k><C-g> :<C-u>Denite grep<CR>
   nnoremap <silent> <C-k><C-l> :<C-u>Denite line<CR>
   nnoremap <silent> <C-k><C-u> :<C-u>Denite file_mru<CR>
-  nnoremap <silent> <C-k><C-y> :<C-u>Denite neoyank<CR> :command NC NERDTreeClose
+  nnoremap <silent> <C-k><C-y> :<C-u>Denite neoyank<CR>
 '''
 
 [[plugins]]
 repo = 'haya14busa/dein-command.vim'
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+hook_add = '''
+  let g:deoplete#enable_at_startup = 1
+'''
 
 # General Editing
 [[plugins]]
