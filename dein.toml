@@ -33,6 +33,11 @@ repo = 'wesQ3/vim-windowswap'
 # Git
 [[plugins]]
 repo = 'tpope/vim-fugitive'
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+hook_add = '''
+  map <S-r> :GitGutterAll<CR>
+'''
 
 # NERDTree
 [[plugins]]

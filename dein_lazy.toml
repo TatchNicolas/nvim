@@ -1,5 +1,22 @@
 # Plugins loaded lazily
 
+# Markdown
+[[plugins]]
+on_ft = ['markdown','mkd']
+repo = 'plasticboy/vim-markdown'
+hook_add = '''
+  let g:vim_markdown_conceal = 0
+'''
+[[plugins]]
+repo = 'joker1007/vim-markdown-quote-syntax'
+on_ft = ['markdown','mkd']
+[[plugins]]
+repo = 'kannokanno/previm'
+on_ft = ['markdown','mkd']
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+on_ft = ['markdown','mkd']
+
 # Python
 [[plugins]]
 on_ft = 'python'
@@ -21,9 +38,15 @@ repo = 'Yggdroot/indentLine'
 on_ft = 'go'
 repo = 'fatih/vim-go'
 hook_add = '''
+  let g:go_highlight_build_constraints = 1
+  let g:go_highlight_extra_types = 1
+  let g:go_highlight_fields = 1
   let g:go_highlight_functions = 1
   let g:go_highlight_methods = 1
+  let g:go_highlight_operators = 1
   let g:go_highlight_structs = 1
+  let g:go_highlight_types = 1
+  let g:deoplete#sources#go#gocode_binary = $HOME.'/go/bin/gocode'
 '''
 [[plugins]]
 on_ft = ['go']
@@ -36,13 +59,3 @@ repo = 'mattn/emmet-vim'
 [[plugins]]
 on_ft = ['vue']
 repo = 'posva/vim-vue'
-
-# JS
-# [[plugins]]
-# on_ft = 'vue'
-# repo = 'fatih/vim-go'
-# hook_add = '''
-# '''
-# [[plugins]]
-# on_ft = ['vue']
-# repo = 'zchee/deoplete-go'
