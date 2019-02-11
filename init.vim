@@ -1,5 +1,5 @@
 " Basic configurations
-colo desert
+hi  LineNr ctermfg=grey
 set autoindent
 set clipboard+=unnamedplus
 set expandtab
@@ -21,11 +21,16 @@ au BufLeave * setlocal nocursorline
 au WinLeave * setlocal nocursorline
 au TermOpen * setlocal nonumber norelativenumber
 
+" Tweak colorscheme
+colo desert
+au ColorScheme * highlight LineNr ctermfg=grey 
+au ColorScheme * highlight Search ctermfg=black ctermbg=grey 
+
 " Disable moving cursor with arrow keys
 map <up> <nop>
 map <down> <nop>
 map <left> <nop>
-map <up> <nop>
+map <right> <nop>
 imap <up> <nop>
 imap <down> <nop>
 imap <left> <nop>

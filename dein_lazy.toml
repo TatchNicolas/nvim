@@ -7,6 +7,11 @@ repo = 'zchee/deoplete-jedi'
 [[plugins]]
 on_ft = 'python'
 repo = 'nvie/vim-flake8'
+hook_add = '''
+  autocmd BufWritePost *.py call Flake8()
+  let g:flake8_show_in_gutter=1
+'''
+
 [[plugins]]
 on_ft = 'python'
 repo = 'Yggdroot/indentLine'
