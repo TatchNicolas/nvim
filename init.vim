@@ -39,9 +39,7 @@ imap <right> <nop>
 " Indent setting for filetypes
 augroup FileTypeConfig
 	autocmd!
-	autocmd FileType css,html,xml,javascript,json,yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 nospell
-	autocmd FileType markdown setlocal tabstop=3 softtabstop=3 shiftwidth=3 nospell
-        autocmd FileType vue syntax sync fromstart
+	autocmd FileType css,html,xml,javascript,json,yaml,toml,vue setlocal tabstop=2 softtabstop=2 shiftwidth=2 nospell
 augroup END
 
 " For quickfix list

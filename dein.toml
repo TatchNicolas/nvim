@@ -3,12 +3,17 @@
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 hook_add = '''
-  nnoremap <silent> <C-k><C-b> :<C-u>Denite buffer<CR>
-  nnoremap <silent> <C-k><C-f> :<C-u>Denite file_rec<CR>
-  nnoremap <silent> <C-k><C-g> :<C-u>Denite grep<CR>
-  nnoremap <silent> <C-k><C-l> :<C-u>Denite line<CR>
-  nnoremap <silent> <C-k><C-u> :<C-u>Denite file_mru<CR>
-  nnoremap <silent> <C-k><C-y> :<C-u>Denite neoyank<CR>
+command DB Denite buffer
+command DF Denite file_rec
+command DG Denite grep
+command DL Denite line
+call denite#custom#map('insert', '<esc>', '<denite:enter_mode:normal>', 'noremap')
+call denite#custom#map('normal', '<esc>', '<denite:quit>', 'noremap')
+call denite#custom#map('insert', '<C-n>', '<denite:move_to_next_line>', 'noremap')
+call denite#custom#map('insert', '<C-p>', '<denite:move_to_previous_line>', 'noremap')
+call denite#custom#map('insert', '<leader>s', '<denite:do_action:split>', 'noremap')
+call denite#custom#map('insert', '<Leader>v', '<denite:do_action:vsplit>', 'noremap')
+call denite#custom#map('insert', '<Leader>t', '<denite:do_action:tabopen>', 'noremap')
 '''
 
 [[plugins]]
@@ -29,6 +34,16 @@ repo = 'tpope/vim-surround'
 repo = 'othree/eregex.vim'
 [[plugins]]
 repo = 'wesQ3/vim-windowswap'
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+hook_add = '''
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_guide_size = 1
+let g:indent_guides_start_level = 2
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=236
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=236
+'''
 
 # Git
 [[plugins]]
@@ -36,17 +51,5 @@ repo = 'tpope/vim-fugitive'
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
 hook_add = '''
-  map <S-r> :GitGutterAll<CR>
+map <S-r> :GitGutterAll<CR>
 '''
-
-# NERDTree
-[[plugins]]
-repo = 'scrooloose/nerdtree'
-hook_add = '''
-  let g:NERDTreeWinSize=25
-  let g:NERDTreeShowHidden=1
-  :command NO NERDTree
-  :command NC NERDTreeClose
-'''
-[[plugins]]
-repo = 'Xuyuanp/nerdtree-git-plugin'

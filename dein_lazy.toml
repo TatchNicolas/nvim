@@ -5,11 +5,14 @@
 on_ft = ['markdown','mkd']
 repo = 'plasticboy/vim-markdown'
 hook_add = '''
-  let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal = 0
 '''
 [[plugins]]
 repo = 'joker1007/vim-markdown-quote-syntax'
 on_ft = ['markdown','mkd']
+hook_add = '''
+autocmd FileType markdown setlocal tabstop=3 softtabstop=3 shiftwidth=3 nospell
+'''
 [[plugins]]
 repo = 'kannokanno/previm'
 on_ft = ['markdown','mkd']
@@ -18,44 +21,16 @@ repo = 'tyru/open-browser.vim'
 on_ft = ['markdown','mkd']
 
 # Python
-[[plugins]]
-on_ft = 'python'
-repo = 'zchee/deoplete-jedi'
-[[plugins]]
-on_ft = 'python'
-repo = 'nvie/vim-flake8'
-hook_add = '''
-  autocmd BufWritePost *.py call Flake8()
-  let g:flake8_show_in_gutter=1
-'''
-
-[[plugins]]
-on_ft = 'python'
-repo = 'Yggdroot/indentLine'
 
 # Go
-[[plugins]]
-on_ft = 'go'
-repo = 'fatih/vim-go'
-hook_add = '''
-  let g:go_highlight_build_constraints = 1
-  let g:go_highlight_extra_types = 1
-  let g:go_highlight_fields = 1
-  let g:go_highlight_functions = 1
-  let g:go_highlight_methods = 1
-  let g:go_highlight_operators = 1
-  let g:go_highlight_structs = 1
-  let g:go_highlight_types = 1
-  let g:deoplete#sources#go#gocode_binary = $HOME.'/go/bin/gocode'
-'''
-[[plugins]]
-on_ft = ['go']
-repo = 'zchee/deoplete-go'
 
 # Frontend
 [[plugins]]
 on_ft = ['html', 'vue']
 repo = 'mattn/emmet-vim'
+hook_add = '''
+autocmd FileType vue syntax sync fromstart
+'''
 [[plugins]]
 on_ft = ['vue']
 repo = 'posva/vim-vue'
