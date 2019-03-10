@@ -20,6 +20,24 @@ call denite#custom#map('insert', '<Leader>t', '<denite:do_action:tabopen>', 'nor
 repo = 'haya14busa/dein-command.vim'
 
 [[plugins]]
+repo = 'autozimu/LanguageClient-neovim'
+rev = 'next'
+build = 'bash install.sh'
+hook_add = '''
+set hidden
+let g:LanguageClient_loggingFile = expand('~/LanguageClient.log')
+let g:LanguageClient_settingsPath = '/home/tatch/.languageclient.json'
+let g:LanguageClient_serverCommands = {
+    \ 'python': ['pyls', '-vv'],
+    \ 'go': ['gopls','-mode','stdio'],
+    \ 'html': ['html-languageserver','--stdio'],
+    \ 'css': ['css-languageserver','--stdio'],
+    \ }
+noremap <Leader>d :call LanguageClient#textDocument_definition()<CR>
+noremap <Leader>r :call LanguageClient#textDocument_rename()<CR>
+'''
+
+[[plugins]]
 repo = 'Shougo/deoplete.nvim'
 hook_add = '''
   let g:deoplete#enable_at_startup = 1

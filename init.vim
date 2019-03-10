@@ -38,9 +38,10 @@ imap <right> <nop>
 
 " Indent setting for filetypes
 augroup FileTypeConfig
-	autocmd!
-	autocmd FileType css,html,xml,javascript,json,yaml,toml,vue setlocal tabstop=2 softtabstop=2 shiftwidth=2 nospell
-augroup END
+	autocmd FileType css,html,javascript,json,rst,vue,xml,yml,toml setlocal sw=2 ts=2 sts=2 nospell
+	autocmd FileType markdown setlocal sw=3 ts=3 sts=3 nospell
+        autocmd FileType python setlocal sw=4 ts=4 sts=4 nospell
+        autocmd FileType vue syntax sync fromstart
 
 " For quickfix list
 map <C-n> :cnext<CR>
@@ -75,9 +76,6 @@ if dein#load_state('/home/tatch/.cache/dein')
   " Let dein manage dein
   " Required:
   call dein#add('/home/tatch/.cache/dein/repos/github.com/Shougo/dein.vim')
-
-  " Add or remove your plugins here like this:
-  call dein#add('Shougo/deoplete.nvim')
 
   " Load plugins specified in TOML files
   call dein#load_toml('~/.config/nvim/dein.toml', {'lazy': 0})
